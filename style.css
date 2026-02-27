@@ -1,15 +1,16 @@
 
 *{ box-sizing:border-box; margin:0; padding:0; }
-html,body{ height:100%; font-family:Arial, sans-serif; }
+
+ 
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+}
+
+
+/*html,body{ height:100%; font-family:Arial, sans-serif; } */
 body{ overflow:hidden; }
-
-html {
-  background: #000;
-}
-
-body {
-  background: #000;
-}
 
 .snap{
   height:100vh;
@@ -236,7 +237,6 @@ body {
   transform: translateY(-2px);
   transition: transform .25s ease;
 }
-
 
 .scroll-indicator {
   position: absolute;
