@@ -3,6 +3,14 @@
 html,body{ height:100%; font-family:Arial, sans-serif; }
 body{ overflow:hidden; }
 
+html {
+  background: #000;
+}
+
+body {
+  background: #000;
+}
+
 .snap{
   height:100vh;
   overflow-y:auto;
