@@ -228,3 +228,47 @@ body{ overflow:hidden; }
   transform: translateY(-2px);
   transition: transform .25s ease;
 }
+
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.25; /* opacidade baixa */
+  pointer-events: none;
+}
+
+.mouse {
+  width: 28px;
+  height: 45px;
+  border: 2px solid white;
+  border-radius: 20px;
+  position: relative;
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background: white;
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 1.8s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    top: 8px;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    top: 22px;
+  }
+}
