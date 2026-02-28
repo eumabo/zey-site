@@ -38,7 +38,7 @@ section {
 /* ===== SECTION 1 ===== */
 .panel--profile{
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(27, 27, 27, 0.85)),
-              url("assets/bg1.png");
+              url("assets/bg1.jpeg");
   background-size:cover;
   background-position:center;
 }
@@ -337,3 +337,27 @@ section {
   color: rgba(255,255,255,0.8) !important;
   text-decoration: none !important;
 }
+
+.logo-3d {
+  display: block;
+  margin: 20px; /* diminui tamanho */
+}
+
+.logo-3d img {
+  width: 100%;
+  animation: spin3d 8s linear infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes spin3d {
+  0% {
+    transform: rotateY(0deg) rotateX(5deg);
+  }
+  50% {
+    transform: rotateY(180deg) rotateX(-5deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(5deg);
+  }
+}
+
