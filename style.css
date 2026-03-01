@@ -377,3 +377,11 @@ section {
   color: #b026ff;
   text-shadow: 0 0 8px #b026ff;
 }
+
+.custom-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+}
