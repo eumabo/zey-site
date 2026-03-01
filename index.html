@@ -118,9 +118,13 @@
   </div>
 </div>
 
-  <footer class="site-footer">
-  Desenvolvido por <strong>Zey</strong> © 2026 — Digital Millennium Copyright Act
+ <footer class="site-footer">
+  Desenvolvido por <strong>Zey</strong> © <span id="year"></span> — Digital Millennium Copyright Act
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
   
 </body>
 </html>
