@@ -385,3 +385,43 @@ section {
   font-size: 12px;
   color: rgba(255,255,255,0.4);
 }
+
+
+.corner-credit{
+  position: fixed;
+  left: 30px;
+  bottom: 22px;
+  z-index: 9999;
+
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.45);
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 10px 14px;
+  border-radius: 14px;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  pointer-events: none; /* não atrapalha clique */
+}
+
+.corner-credit strong{
+  color: #b026ff;
+  text-shadow: 0 0 10px rgba(176,38,255,0.75);
+}
+
+/* Mobile: centraliza e reduz */
+@media (max-width: 600px){
+  .corner-credit{
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 14px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 8px 12px;
+  }
+}
