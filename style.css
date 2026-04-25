@@ -133,6 +133,7 @@ section {
 }
 
 .shot img{
+-webkit-user-drag: none;
  pointer-events: none;
   width:100%;
   display:block;
@@ -140,6 +141,7 @@ section {
 }
 
 .shot:
+-webkit-user-drag: none;
 pointer-events: none;
 hover img{ opacity:.9; }
 
