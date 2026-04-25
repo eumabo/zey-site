@@ -133,15 +133,18 @@ section {
 }
 
 .shot img{
--webkit-user-drag: none;
  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
   width:100%;
   display:block;
   transition:opacity .2s;
 }
 
 .shot:
--webkit-user-drag: none;
+ pointer-events: none;
+ user-select: none;
+ -webkit-user-drag: none;
 pointer-events: none;
 hover img{ opacity:.9; }
 
