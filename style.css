@@ -142,10 +142,6 @@ section {
 }
 
 .shot:
- pointer-events: none;
- user-select: none;
- -webkit-user-drag: none;
-pointer-events: none;
 hover img{ opacity:.9; }
 
 @media (max-width:980px){
