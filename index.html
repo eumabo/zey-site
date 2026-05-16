@@ -1,142 +1,384 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Zey • </title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon.png">
+<head> 
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ZEY</title>
+ <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon.png">
 <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
+<div class="ambient ambient-1"></div>
+<div class="ambient ambient-2"></div>
+<div class="noise"></div>
 
-  <audio id="bgm" src="assets/music.mp3" preload="auto" loop></audio>
-
-<button id="soundBtn" class="sound-btn" aria-label="Ativar som" hidden>
-     <span style="color: gray; border: 1px color(srgb red green blue);"> Welcome </span>
-</button>
-
-
-  <nav class="dots">
-    <button class="dot is-active" data-to="0"></button>
-    <button class="dot" data-to="1"></button>
-  </nav>
-
-  <div class="hint">
-    
-    <div class="mouse"></div>
+<nav class="topbar">
+  <div class="brand">ZEY</div>
+  <div class="nav-actions">
+    <a href="#gallery">Gallery</a>
   </div>
+</nav>
 
-  <main id="snap" class="snap">
+<main class="snap" id="snap">
 
-    <!-- SECTION 1 -->
+<section class="hero">
 
+  <div class="profile-card reveal">
 
-    <div class="scroll-hint" id="scrollHint">
-  <div class="scroll-hint-mouse">
-    <div class="scroll-hint-wheel"></div>
-  </div>
-  <span>deslize para baixo</span>
-</div>
+    <div class="profile-ring"></div>
 
-    
-    <section class="panel panel--profile" data-index="0">
-
-
-<div class="logo-3d">
-  <div class="logo-flip" aria-label="Logo girando">
-    <div class="logo-face logo-front">
-      <img src="assets/logo.png" alt="Logo frente">
+    <div class="avatar-wrap">
+      <img src="assets/avatar.jpg" alt="">
     </div>
 
-    <div class="logo-face logo-back">
-      <img src="assets/logo-back.png" alt="Logo verso">
-    </div>
-  </div>
-</div>
+    <h2>ZEY</h2>
 
+    <span class="tag">EGO</span>
 
-      <div class="profile-card">
-        <div class="cover"></div>
-
-        <div class="avatar-wrap">
-          <img class="avatar" src="assets/avatar.jpg" alt="Avatar" />
-        </div>
-  
-          <div class="profile-content">
-          <h1 class="name">𝒵𝑒𝓎</h1>
-          <div class="tagline"> ┼ </div>
-<div class="discord-buttons">
-  <a href="https://discord.gg/MxdZvdk8" target="_blank" class="discord-btn">
-    <svg viewBox="0 0 24 24" width="18" height="18">
-      <path fill="currentColor" d="M20.317 4.369A19.791 19.791 0 0016.885 3c-.185.328-.39.76-.535 1.104a18.27 18.27 0 00-4.7 0A11.64 11.64 0 0011.115 3a19.736 19.736 0 00-3.432 1.369C4.533 9.046 3.78 13.58 4.154 18.057a19.9 19.9 0 005.993 3.01c.485-.666.918-1.37 1.292-2.106a12.934 12.934 0 01-2.04-.97c.172-.125.34-.256.503-.391 3.928 1.842 8.18 1.842 12.062 0 .164.135.332.266.503.391a12.93 12.93 0 01-2.04.97c.374.736.807 1.44 1.292 2.106a19.9 19.9 0 005.993-3.01c.44-5.177-.73-9.67-3.55-13.688zM9.75 15.25c-.966 0-1.75-.89-1.75-1.986s.77-1.986 1.75-1.986c.99 0 1.77.9 1.75 1.986 0 1.096-.77 1.986-1.75 1.986zm4.5 0c-.966 0-1.75-.89-1.75-1.986s.77-1.986 1.75-1.986c.99 0 1.77.9 1.75 1.986 0 1.096-.77 1.986-1.75 1.986z"/>
-    </svg>
-    <span>Discord</span>
-  </a>
-</div>
-
-        </div>
-      </div>
-
-    </section>
-
-    <!-- SECTION 2 (VSCO GRID) -->
-    <section class="panel panel--gallery" data-index="1">
-
-      <div class="masonry">
-        <figure class="shot"><img src="assets/g1.jpg" draggable="false"></figure>
-        <figure class="shot"><img src="assets/g2.jpg" draggable="false"></figure>
-        <figure class="shot"><img src="assets/g3.jpg" draggable="false"></figure>
-        <figure class="shot"><img src="assets/g4.png" draggable="false"></figure>
-        
-        <figure class="shot"><img src="assets/g6.jpg" draggable="false"></figure>
-        <figure class="shot"><img src="assets/g7.jpg" draggable="false"></figure>
-        <figure class="shot"><img src="assets/g8.jpg" draggable="false"></figure>
-        <figure class="shot"><img src="assets/g9.jpg" draggable="false"></figure>
-        <figure class="shot"><img src="assets/g10.jpg" draggable="false"></figure>
-        
-        <figure class="shot"><img src="assets/g12.jpg" draggable="false"></figure>
-        <figure class="shot"><img src="assets/g13.jpg" draggable="false"></figure>
-        <figure class="shot"><img src="assets/g14.png" draggable="false"></figure>
-        <figure class="shot"><img src="assets/g15.jpg" draggable="false"></figure>
-        <figure class="shot"><img src="assets/g16.jpg" draggable="false"></figure>
-        <figure class="shot"><img src="assets/g17.png" draggable="false"></figure>
-        <figure class="shot"><img src="assets/g18.jpg" draggable="false"></figure>
-        <figure class="shot"><img src="assets/g19.png" draggable="false"></figure>
-        <figure class="shot"><img src="assets/g20.jpg" draggable="false"></figure>
-      </div>
-
-    </section>
-
-  </main>
-
-
-
-<div class="scroll-indicator">
-  <div class="mouse">
-    <div class="wheel"></div>
-  </div>
-</div>
-
-  <div class="corner-credit">
-  Desenvolvido por <strong>Zey</strong> © <span id="year"></span> — DMCA ©
+ <div class="hero-buttons">
+  <button class="btn secondary" id="discordBtn">
+    Discord
+  </button>
 </div>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+const discordUser = "ghostenk";
+
+document.getElementById("discordBtn")
+.addEventListener("click", async () => {
+
+  try {
+
+    await navigator.clipboard.writeText(discordUser);
+
+    const btn = document.getElementById("discordBtn");
+
+    const textoOriginal = btn.innerHTML;
+
+    btn.innerHTML = "Copiado!";
+    btn.style.transform = "scale(1.05)";
+
+    setTimeout(() => {
+      btn.innerHTML = textoOriginal;
+      btn.style.transform = "";
+    }, 1800);
+
+  } catch(err) {
+
+    alert("Não foi possível copiar.");
+
+  }
+
+});
 </script>
-  
 
-<div class="contador-global">
-<span class="contador-label">VISITANTES</span>
-<span id="contador">0</span>
+  </div>
 
+  <div class="floating-card">
+
+    <div class="card-3d">
+
+      <div class="face front">
+        <img src="assets/logo.png" alt="">
+      </div>
+
+      <div class="face back">
+        <img src="assets/logo-back.png" alt="">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+</div>
+
+
+
+
+  <span class="tag">Galery</span>
+
+
+    </a>
+  </div>
+
+   
+</div>
+
+
+  <div class="masonry">
+    <figure class="shot reveal"><img src="assets/g1.jpg"></figure>
+    <figure class="shot reveal"><img src="assets/g2.jpg"></figure>
+    <figure class="shot reveal"><img src="assets/g3.jpg"></figure>
+    <figure class="shot reveal"><img src="assets/g4.png"></figure>
+    <figure class="shot reveal"><img src="assets/g6.jpg"></figure>
+    <figure class="shot reveal"><img src="assets/g7.jpg"></figure>
+    <figure class="shot reveal"><img src="assets/g8.jpg"></figure>
+    <figure class="shot reveal"><img src="assets/g9.jpg"></figure>
+    <figure class="shot reveal"><img src="assets/g10.jpg"></figure>
+    <figure class="shot reveal"><img src="assets/g12.jpg"></figure>
+    <figure class="shot reveal"><img src="assets/g13.jpg"></figure>
+    <figure class="shot reveal"><img src="assets/g14.png"></figure>
+    <figure class="shot reveal"><img src="assets/g15.jpg"></figure>
+    <figure class="shot reveal"><img src="assets/g16.jpg"></figure>
+    <figure class="shot reveal"><img src="assets/g17.jpg"></figure>
+    <figure class="shot reveal"><img src="assets/g18.jpg"></figure>
+    <figure class="shot reveal"><img src="assets/g19.png"></figure>
+    <figure class="shot reveal"><img src="assets/g20.jpg"></figure>
+
+  </div>
+
+</section>
+
+</main>
 
 <script type="module" src="app.js"></script>
 
+<audio id="bg-music" autoplay loop>
+  <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+
+<script src="app.js"></script>
+
+
 </div>
+
+
+<!-- CONTADOR GLOBAL -->
+<div class="contador-global">
+
+  <span id="contador">0</span>
+  <small>visualizações</small>
+
+</div>
+
+<!-- DEV POR ZEY -->
+
+  <span>dev por</span>
+  <strong>Zey</strong>
+
+</a>
+
+<style>
+.contador-global{
+position:fixed;
+right:20px;
+bottom:20px;
+z-index:9999;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+padding:12px 18px;
+
+background:rgba(15,15,15,.75);
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.08);
+border-radius:16px;
+
+box-shadow:
+0 0 20px rgba(0,0,0,.35),
+inset 0 0 0 1px rgba(255,255,255,.03);
+
+font-family:Arial,sans-serif;
+color:#fff;
+}
+
+#contador{
+font-size:22px;
+font-weight:700;
+transition:.3s;
+}
+
+.contador-global small{
+font-size:12px;
+opacity:.6;
+margin-top:2px;
+}
+
+.update{
+transform:scale(1.08);
+}
+
+.dev-zey-footer{
+position:fixed;
+left:20px;
+bottom:20px;
+z-index:9999;
+
+display:flex;
+align-items:center;
+gap:6px;
+
+padding:10px 14px;
+
+background:rgba(15,15,15,.72);
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.08);
+border-radius:14px;
+
+box-shadow:
+0 0 20px rgba(0,0,0,.35);
+
+font-family:Arial,sans-serif;
+font-size:12px;
+letter-spacing:.8px;
+
+text-decoration:none;
+
+transition:.3s ease;
+}
+
+.dev-zey-footer:hover{
+transform:translateY(-2px);
+
+border-color:rgba(88,101,242,.5);
+
+box-shadow:
+0 0 25px rgba(88,101,242,.25);
+}
+
+.dev-zey-footer span{
+color:rgba(255,255,255,.55);
+text-transform:uppercase;
+}
+
+.dev-zey-footer strong{
+color:#fff;
+font-weight:700;
+}
+</style>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+
+import {
+getDatabase,
+ref,
+runTransaction,
+onValue
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyBOTYED5F2vFicKsOiVnAVLW8vW_dsv-U",
+authDomain: "euzey-8da83.firebaseapp.com",
+databaseURL: "https://euzey-8da83-default-rtdb.firebaseio.com",
+projectId: "euzey-8da83"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+const contadorRef = ref(db,"visitas");
+
+const TEMPO_LIMITE = 24 * 60 * 60 * 1000;
+
+const ultimaVisita =
+localStorage.getItem("ultimaVisita");
+
+const agora = Date.now();
+
+if(!ultimaVisita || (agora - ultimaVisita) > TEMPO_LIMITE){
+
+runTransaction(contadorRef,(current)=>{
+return (current || 4658) + 1;
+});
+
+localStorage.setItem("ultimaVisita",agora);
+}
+
+onValue(contadorRef,(snapshot)=>{
+
+const valor = snapshot.val() || 0;
+
+const el = document.getElementById("contador");
+
+el.textContent =
+Number(valor).toLocaleString('pt-BR');
+
+el.classList.add("update");
+
+setTimeout(()=>{
+el.classList.remove("update");
+},300);
+
+});
+
+</script>
+
+
+
+<!-- DEV POR ZEY -->
+<div class="dev-zey-footer">
+  <span>Desenvolvido por</span>
+  <strong>Zey</strong>
+  <span> ®️ 2026 - DMCA</span>
+</div>
+
+<style>
+.dev-zey-footer{
+position:fixed;
+left:20px;
+bottom:20px;
+z-index:9999;
+
+display:flex;
+align-items:center;
+gap:6px;
+
+padding:10px 14px;
+
+background:rgba(15,15,15,.72);
+backdrop-filter:blur(12px);
+
+border:1px solid rgb(31, 0, 29);
+border-radius:14px;
+
+box-shadow:
+0 0 20px rgba(0,0,0,.35),
+inset 0 0 0 1px rgba(255,255,255,.03);
+
+font-family:Arial,sans-serif;
+font-size:12px;
+letter-spacing:.8px;
+
+transition:.3s ease;
+}
+
+.dev-zey-footer:hover{
+transform:translateY(-2px);
+border-color:rgba(255,255,255,.16);
+box-shadow:
+0 0 25px rgba(0,0,0,.45),
+0 0 10px rgba(255,255,255,.06);
+}
+
+.dev-zey-footer span{
+color:rgba(255,255,255,.55);
+text-transform:uppercase;
+}
+
+.dev-zey-footer strong{
+color:#762fa5;
+font-weight:700;
+letter-spacing:1.2px;
+}
+</style>
 </body>
 </html>
