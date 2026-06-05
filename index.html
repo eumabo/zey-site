@@ -1,381 +1,141 @@
 <!doctype html>
 <html lang="pt-BR">
-<head> 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>ZEY</title>
- <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon.png">
-<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ZEY</title>
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@600;700;800&family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-
-<div class="ambient ambient-1"></div>
-<div class="ambient ambient-2"></div>
-<div class="noise"></div>
-
-<nav class="topbar">
-  <div class="brand">ZEY</div>
-  <div class="nav-actions">
-    <a href="#gallery">Gallery</a>
-  </div>
-</nav>
-
-<main class="snap" id="snap">
-
-<section class="hero">
-
-  <div class="profile-card reveal">
-
-    <div class="profile-ring"></div>
-
-    <div class="avatar-wrap">
-      <img src="assets/avatar.png" alt="">
-    </div>
-
-    <h2>ZEY</h2>
-
-    <span class="tag">EGO</span>
-
- <div class="hero-buttons">
-  <button class="btn secondary" id="discordBtn">
-    Discord
-  </button>
-</div>
-
-<script>
-const discordUser = "ghostenk";
-
-document.getElementById("discordBtn")
-.addEventListener("click", async () => {
-
-  try {
-
-    await navigator.clipboard.writeText(discordUser);
-
-    const btn = document.getElementById("discordBtn");
-
-    const textoOriginal = btn.innerHTML;
-
-    btn.innerHTML = "Copiado!";
-    btn.style.transform = "scale(1.05)";
-
-    setTimeout(() => {
-      btn.innerHTML = textoOriginal;
-      btn.style.transform = "";
-    }, 1800);
-
-  } catch(err) {
-
-    alert("Não foi possível copiar.");
-
-  }
-
-});
-</script>
-
+  <div class="preloader" id="preloader">
+    <div class="pre-logo">ZEY</div>
+    <div class="pre-line"><span></span></div>
   </div>
 
-  <div class="floating-card">
+  <div class="grain"></div>
+  <div class="side-glow left"></div>
+  <div class="side-glow right"></div>
+  <div class="cursor-light" id="cursorLight"></div>
 
-    <div class="card-3d">
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="ZEY Home">ZEY</a>
+    <nav class="nav-actions" aria-label="Navegação principal">
+      <button class="sound-btn" id="soundBtn" type="button" aria-label="Ativar ou pausar música">
+        <span id="soundIcon">♪</span>
+      </button>
+      <a href="#gallery">Gallery</a>
+    </nav>
+  </header>
 
-      <div class="face front">
-        <img src="assets/logo.png" alt="">
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-card reveal">
+        <div class="avatar-wrap">
+          <img src="assets/avatar.png" alt="Avatar ZEY">
+        </div>
+        <p class="eyebrow">— EGO —</p>
+        <h1>ZEY</h1>
+        <button class="discord-btn" id="discordBtn" type="button">☁ Discord</button>
       </div>
 
-      <div class="face back">
-        <img src="assets/logo-back.png" alt="">
+      <div class="logo-stage reveal">
+        <div class="rotating-logo" aria-label="Logo giratória ZEY">
+          <div class="logo-face logo-front"><img src="assets/logo.png" alt="Logo ZEY frente"></div>
+          <div class="logo-face logo-back"><img src="assets/logo-back.png" alt="Logo ZEY verso"></div>
+        </div>
       </div>
 
-    </div>
+      <a class="scroll-indicator" href="#gallery" aria-label="Ir para a galeria">
+        <span>Scroll</span>
+        <i></i>
+      </a>
+    </section>
 
+    <section class="gallery-section" id="gallery">
+      <div class="gallery-head reveal">
+        <div>
+          <span class="archive">— Archive</span>
+          <h2>Gallery</h2>
+        </div>
+        <p><strong>20</strong> / works</p>
+      </div>
+
+      <div class="masonry">
+     <!--    <figure class="shot tall reveal"><img src="assets/g17.png" alt="ZEY visual 01"></figure> -->
+        <figure class="shot reveal"><img src="assets/g2.png" alt="ZEY visual 02"></figure>
+        <figure class="shot wide reveal"><img src="assets/g3.jpg" alt="ZEY visual 03"></figure>
+       <!--  <figure class="shot tall reveal"><img src="assets/g4.png" alt="ZEY visual 04"></figure> -->
+        <figure class="shot reveal"><img src="assets/g6.jpg" alt="ZEY visual 05"></figure>
+        <figure class="shot tall reveal"><img src="assets/g1.jpg" alt="ZEY visual 06"></figure>
+        <figure class="shot reveal"><img src="assets/g8.png" alt="ZEY visual 07"></figure>
+      <!--   <figure class="shot tall reveal"><img src="assets/g9.jpg" alt="ZEY visual 08"></figure> -->
+        <figure class="shot reveal"><img src="assets/g10.jpg" alt="ZEY visual 09"></figure>
+        <figure class="shot tall reveal"><img src="assets/g12.jpg" alt="ZEY visual 10"></figure>
+        <figure class="shot reveal"><img src="assets/g22.png" alt="ZEY visual 11"></figure>
+        <figure class="shot tall reveal"><img src="assets/g14.png" alt="ZEY visual 12"></figure>
+        <figure class="shot reveal"><img src="assets/g15.jpg" alt="ZEY visual 13"></figure> -->
+        <figure class="shot tall reveal"><img src="assets/g16.jpg" alt="ZEY visual 14"></figure>
+        <figure class="shot reveal"><img src="assets/g7.jpg" alt="ZEY visual 15"></figure>
+       <!--  <figure class="shot tall reveal"><img src="assets/g18.jpg" alt="ZEY visual 16"></figure> -->
+        <figure class="shot reveal"><img src="assets/g19.png" alt="ZEY visual 17"></figure>
+       <!--  <figure class="shot tall reveal"><img src="assets/g20.jpg" alt="ZEY visual 18"></figure> -->
+        <figure class="shot reveal"><img src="assets/g21.png" alt="ZEY visual 19"></figure>
+        <figure class="shot tall reveal"><img src="assets/g13.png" alt="ZEY visual 20"></figure>
+      </div>
+    </section>
+  </main>
+
+  <div class="contador-global" aria-label="contador de visualizações">
+    <span class="dot"></span>
+    <strong id="contador">0</strong>
+    <small>visualizações</small>
   </div>
 
-</section>
-
-
-
-</div>
-
-
-
-
-  <span class="tag">Galery</span>
-
-
-    </a>
-  </div>
-
-   
-</div>
-
-
-  <div class="masonry">
-    <!-- <figure class="shot reveal"><img src="assets/g17.png"></figure> -->
-    <figure class="shot reveal"><img src="assets/g2.png"></figure>
-    <figure class="shot reveal"><img src="assets/g3.jpg"></figure>
-   <!-- <figure class="shot reveal"><img src="assets/g4.png"></figure> -->
-    <figure class="shot reveal"><img src="assets/g6.jpg"></figure>
-    <figure class="shot reveal"><img src="assets/g1.jpg"></figure>
-    <figure class="shot reveal"><img src="assets/g8.png"></figure>
-    <!--<figure class="shot reveal"><img src="assets/g9.jpg"></figure> -->
-    <figure class="shot reveal"><img src="assets/g10.jpg"></figure>
-    <figure class="shot reveal"><img src="assets/g12.jpg"></figure>
-    <figure class="shot reveal"><img src="assets/g22.png"></figure>
-    <figure class="shot reveal"><img src="assets/g14.png"></figure>
-    <!--  <figure class="shot reveal"><img src="assets/g15.jpg"></figure> -->
-    <figure class="shot reveal"><img src="assets/g16.jpg"></figure>
-    <figure class="shot reveal"><img src="assets/g7.jpg"></figure>
-    <!--<figure class="shot reveal"><img src="assets/g18.jpg"></figure> -->
-    <figure class="shot reveal"><img src="assets/g19.png"></figure>
-   <!-- <figure class="shot reveal"><img src="assets/g20.jpg"></figure> -->
-    <figure class="shot reveal"><img src="assets/g21.png"></figure>
-    <figure class="shot reveal"><img src="assets/g13.png"></figure>
-  </div>
-
-</section>
-
-</main>
-
-<script type="module" src="app.js"></script>
-
-<audio id="bg-music" autoplay loop>
-  <source src="assets/music.mp3" type="audio/mpeg">
-</audio>
-
-<script src="app.js"></script>
-
-
-</div>
-
-
-<!-- CONTADOR GLOBAL -->
-<div class="contador-global">
-
-  <span id="contador">0</span>
-  <small>visualizações</small>
-
-</div>
-
-<!--  POR ZEY -->
-
-
-<style>
-.contador-global{
-position:fixed;
-right:20px;
-bottom:20px;
-z-index:9999;
-
-display:flex;
-flex-direction:column;
-align-items:center;
-
-padding:12px 18px;
-
-background:rgba(15,15,15,.75);
-backdrop-filter:blur(12px);
-
-border:1px solid rgba(255,255,255,.08);
-border-radius:16px;
-
-box-shadow:
-0 0 20px rgba(0,0,0,.35),
-inset 0 0 0 1px rgba(255,255,255,.03);
-
-font-family:Arial,sans-serif;
-color:#fff;
-}
-
-#contador{
-font-size:22px;
-font-weight:700;
-transition:.3s;
-}
-
-.contador-global small{
-font-size:12px;
-opacity:.6;
-margin-top:2px;
-}
-
-.update{
-transform:scale(1.08);
-}
-
-.dev-zey-footer{
-position:fixed;
-left:20px;
-bottom:20px;
-z-index:9999;
-
-display:flex;
-align-items:center;
-gap:6px;
-
-padding:10px 14px;
-
-background:rgba(15,15,15,.72);
-backdrop-filter:blur(12px);
-
-border:1px solid rgba(255,255,255,.08);
-border-radius:14px;
-
-box-shadow:
-0 0 20px rgba(0,0,0,.35);
-
-font-family:Arial,sans-serif;
-font-size:12px;
-letter-spacing:.8px;
-
-text-decoration:none;
-
-transition:.3s ease;
-}
-
-.dev-zey-footer:hover{
-transform:translateY(-2px);
-
-border-color:rgba(88,101,242,.5);
-
-box-shadow:
-0 0 25px rgba(88,101,242,.25);
-}
-
-.dev-zey-footer span{
-color:rgba(255,255,255,.55);
-text-transform:uppercase;
-}
-
-.dev-zey-footer strong{
-color:#fff;
-font-weight:700;
-}
-</style>
-
-<script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-
-import {
-getDatabase,
-ref,
-runTransaction,
-onValue
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
-
-const firebaseConfig = {
-apiKey: "AIzaSyBOTYED5F2vFicKsOiVnAVLW8vW_dsv-U",
-authDomain: "euzey-8da83.firebaseapp.com",
-databaseURL: "https://euzey-8da83-default-rtdb.firebaseio.com",
-projectId: "euzey-8da83"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-
-const contadorRef = ref(db,"visitas");
-
-const TEMPO_LIMITE = 24 * 60 * 60 * 1000;
-
-const ultimaVisita =
-localStorage.getItem("ultimaVisita");
-
-const agora = Date.now();
-
-if(!ultimaVisita || (agora - ultimaVisita) > TEMPO_LIMITE){
-
-runTransaction(contadorRef,(current)=>{
-return (current || 4658) + 1;
-});
-
-localStorage.setItem("ultimaVisita",agora);
-}
-
-onValue(contadorRef,(snapshot)=>{
-
-const valor = snapshot.val() || 0;
-
-const el = document.getElementById("contador");
-
-el.textContent =
-Number(valor).toLocaleString('pt-BR');
-
-el.classList.add("update");
-
-setTimeout(()=>{
-el.classList.remove("update");
-},300);
-
-});
-
-</script>
-
-
-
-<!-- DEV POR ZEY -->
-<div class="dev-zey-footer">
-  <span>Desenvolvido por</span>
-  <strong>Zey</strong>
-  <span> ®️ 2026 - DMCA</span>
-</div>
-
-<style>
-.dev-zey-footer{
-position:fixed;
-left:20px;
-bottom:20px;
-z-index:9999;
-
-display:flex;
-align-items:center;
-gap:6px;
-
-padding:10px 14px;
-
-background:rgba(15,15,15,.72);
-backdrop-filter:blur(12px);
-
-border:1px solid rgb(31, 0, 29);
-border-radius:14px;
-
-box-shadow:
-0 0 20px rgba(0,0,0,.35),
-inset 0 0 0 1px rgba(255,255,255,.03);
-
-font-family:Arial,sans-serif;
-font-size:12px;
-letter-spacing:.8px;
-
-transition:.3s ease;
-}
-
-.dev-zey-footer:hover{
-transform:translateY(-2px);
-border-color:rgba(255,255,255,.16);
-box-shadow:
-0 0 25px rgba(0,0,0,.45),
-0 0 10px rgba(255,255,255,.06);
-}
-
-.dev-zey-footer span{
-color:rgba(255,255,255,.55);
-text-transform:uppercase;
-}
-
-.dev-zey-footer strong{
-color:#762fa5;
-font-weight:700;
-letter-spacing:1.2px;
-}
-</style>
+  <footer class="site-footer">
+    <span>Desenvolvido por</span>
+    <strong>ZEY</strong>
+    <span>© 2026 — DMCA</span>
+  </footer>
+
+  <audio id="bg-music" loop preload="auto">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getDatabase, ref, runTransaction, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBOTYED5F2vFicKsOiVnAVLW8vW_dsv-U",
+      authDomain: "euzey-8da83.firebaseapp.com",
+      databaseURL: "https://euzey-8da83-default-rtdb.firebaseio.com",
+      projectId: "euzey-8da83"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const contadorRef = ref(db,"visitas");
+    const TEMPO_LIMITE = 24 * 60 * 60 * 1000;
+    const ultimaVisita = localStorage.getItem("ultimaVisita");
+    const agora = Date.now();
+
+    if(!ultimaVisita || (agora - ultimaVisita) > TEMPO_LIMITE){
+      runTransaction(contadorRef,(current)=> (current || 4971) + 1);
+      localStorage.setItem("ultimaVisita",agora);
+    }
+
+    onValue(contadorRef,(snapshot)=>{
+      const valor = snapshot.val() || 0;
+      const el = document.getElementById("contador");
+      el.textContent = Number(valor).toLocaleString('pt-BR');
+      el.classList.add("pulse");
+      setTimeout(()=>el.classList.remove("pulse"),300);
+    });
+  </script>
+  <script src="app.js"></script>
 </body>
 </html>
