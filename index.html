@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="ZEY - Take Care">
+  <title>ZEY — Take Care</title>
+
+  <style>
+    :root {
+      --bg: #050505;
+      --text: 220;
+      --glow: 0.10;
+      --pulse: 1;
+      --tracking: 0.38em;
+      --bg-brightness: 1;
+      --screen-flash: 0;
+      --blur: 90px;
+      --after-opacity: 0.14;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    body {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      color: rgb(var(--text), var(--text), var(--text));
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      cursor: default;
+      background:
+        radial-gradient(circle at center,
+          rgba(255,255,255, calc(0.018 + var(--glow) * 0.08)) 0%,
+          rgba(255,255,255, calc(0.012 + var(--glow) * 0.04)) 10%,
+          rgba(255,255,255, 0.02) 18%,
+          rgba(255,255,255, 0.008) 28%,
+          rgba(0,0,0, 0) 48%),
+        radial-gradient(circle at center,
+          rgba(255,255,255, calc(0.012 + var(--screen-flash) * 0.07)) 0%,
+          rgba(255,255,255, 0.012) 18%,
+          rgba(0,0,0, 0) 55%),
+        linear-gradient(180deg,
+          rgba(255,255,255, calc(0.008 + var(--bg-brightness) * 0.006)) 0%,
+          rgba(0,0,0, 0) 100%),
+        var(--bg);
+      filter: brightness(var(--bg-brightness));
+      transition: filter 120ms linear, background 120ms linear;
+    }
+
+    body.cursor-hidden {
+      cursor: none;
+    }
+
+    .noise,
+    .flash {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .noise {
+      opacity: 0.035;
+      background-image:
+        radial-gradient(circle at 25% 25%, rgba(255,255,255,0.05) 0 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(255,255,255,0.04) 0 1px, transparent 1px);
+      background-size: 18px 18px, 24px 24px;
+      mix-blend-mode: soft-light;
+    }
+
+    .flash {
+      background: rgba(255,255,255, var(--screen-flash));
+      opacity: 1;
+      transition: background 90ms linear;
+    }
+
+    main {
+      width: 100%;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .word-wrap {
+      position: relative;
+      display: inline-grid;
+      place-items: center;
+    }
+
+    .word-wrap::before,
+    .word-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .word-wrap::before {
+      width: clamp(180px, 34vw, 420px);
+      height: clamp(180px, 34vw, 420px);
+      background: radial-gradient(circle,
+        rgba(255,255,255, calc(0.030 + var(--glow) * 0.11)) 0%,
+        rgba(255,255,255, calc(0.015 + var(--glow) * 0.06)) 18%,
+        rgba(255,255,255, 0.012) 30%,
+        rgba(255,255,255, 0.006) 42%,
+        rgba(255,255,255, 0.0) 72%);
+      filter: blur(var(--blur));
+      opacity: calc(0.32 + var(--glow) * 0.55);
+      transform:
+        translate(-50%, -50%)
+        scale(calc(0.92 + var(--pulse) * 0.10));
+      transition: transform 110ms linear, opacity 110ms linear, filter 110ms linear;
+    }
+
+    .word-wrap::after {
+      width: clamp(320px, 48vw, 760px);
+      height: clamp(80px, 12vw, 170px);
+      background: radial-gradient(circle,
+        rgba(255,255,255, calc(0.020 + var(--glow) * 0.06)) 0%,
+        rgba(255,255,255, 0.01) 32%,
+        rgba(255,255,255, 0) 75%);
+      filter: blur(28px);
+      opacity: var(--after-opacity);
+    }
+
+    h1 {
+      font-size: clamp(1.05rem, 2.15vw, 1.55rem);
+      font-weight: 300;
+      letter-spacing: var(--tracking);
+      text-transform: lowercase;
+      padding-left: var(--tracking);
+      opacity: 0;
+      animation: appear 1.8s ease forwards;
+      transform: scale(var(--pulse));
+      text-shadow:
+        0 0 calc(16px + var(--glow) * 18px) rgba(255,255,255, calc(0.07 + var(--glow) * 0.12)),
+        0 0 calc(34px + var(--glow) * 40px) rgba(255,255,255, calc(0.025 + var(--glow) * 0.08));
+      user-select: none;
+      white-space: nowrap;
+      transition:
+        transform 110ms linear,
+        letter-spacing 110ms linear,
+        text-shadow 110ms linear,
+        opacity 400ms ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(6px) scale(0.985);
+        filter: blur(6px);
+      }
+      to {
+        opacity: 0.90;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body,
+      .word-wrap::before,
+      h1 {
+        transition: none;
+      }
+      h1 {
+        opacity: 0.9;
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="flash" aria-hidden="true"></div>
+
+  <main id="stage" aria-label="take care">
+    <div class="word-wrap">
+      <h1 id="word">take care</h1>
+    </div>
+  </main>
+
+  <audio id="music" src="./audio/music.mp3" preload="auto" loop playsinline crossorigin="anonymous"></audio>
+
+  <script>
+    const root = document.documentElement;
+    const audio = document.getElementById('music');
+    const stage = document.getElementById('stage');
+
+    let audioContext = null;
+    let analyser = null;
+    let source = null;
+    let dataArray = null;
+    let isStarted = false;
+    let rafId = null;
+    let smoothBass = 0;
+    let smoothEnergy = 0;
+    let smoothBeat = 0;
+    let lastFlash = 0;
+    let cursorTimer = null;
+
+    function clamp(value, min, max) {
+      return Math.max(min, Math.min(max, value));
+    }
+
+    function hideCursorLater() {
+      clearTimeout(cursorTimer);
+      document.body.classList.remove('cursor-hidden');
+      cursorTimer = setTimeout(() => {
+        document.body.classList.add('cursor-hidden');
+      }, 2200);
+    }
+
+    function setupCursorBehavior() {
+      ['mousemove', 'pointerdown', 'touchstart'].forEach(eventName => {
+        window.addEventListener(eventName, hideCursorLater, { passive: true });
+      });
+      hideCursorLater();
+    }
+
+    async function initAudio() {
+      if (isStarted) return;
+      isStarted = true;
+
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      analyser = audioContext.createAnalyser();
+      analyser.fftSize = 2048;
+      analyser.smoothingTimeConstant = 0.82;
+
+      source = audioContext.createMediaElementSource(audio);
+      source.connect(analyser);
+      analyser.connect(audioContext.destination);
+
+      dataArray = new Uint8Array(analyser.frequencyBinCount);
+
+      if (audioContext.state === 'suspended') {
+        await audioContext.resume();
+      }
+
+      try {
+        await audio.play();
+      } catch (error) {
+        console.error('Falha ao iniciar o áudio:', error);
+      }
+
+      animate();
+    }
+
+    function getAverages() {
+      analyser.getByteFrequencyData(dataArray);
+
+      const len = dataArray.length;
+      let bass = 0;
+      let mids = 0;
+      let highs = 0;
+      let all = 0;
+
+      const bassEnd = Math.floor(len * 0.08);
+      const midsEnd = Math.floor(len * 0.28);
+
+      for (let i = 0; i < len; i++) {
+        const v = dataArray[i];
+        all += v;
+        if (i < bassEnd) bass += v;
+        else if (i < midsEnd) mids += v;
+        else highs += v;
+      }
+
+      bass = bass / Math.max(1, bassEnd) / 255;
+      mids = mids / Math.max(1, midsEnd - bassEnd) / 255;
+      highs = highs / Math.max(1, len - midsEnd) / 255;
+      all = all / len / 255;
+
+      return { bass, mids, highs, all };
+    }
+
+    function animate() {
+      const { bass, mids, highs, all } = getAverages();
+
+      smoothBass += (bass - smoothBass) * 0.18;
+      smoothEnergy += (all - smoothEnergy) * 0.14;
+
+      const beatCandidate = clamp((bass * 1.35 + all * 0.75) - (smoothBass * 0.55), 0, 1);
+      smoothBeat += (beatCandidate - smoothBeat) * 0.20;
+
+      const pulse = 1 + smoothBass * 0.035 + smoothEnergy * 0.018;
+      const glow = clamp(smoothBass * 0.95 + smoothEnergy * 0.55 + mids * 0.15, 0, 1.2);
+      const tracking = 0.38 + smoothEnergy * 0.055;
+      const brightness = 1 + smoothEnergy * 0.055 + smoothBass * 0.03;
+
+      let flash = 0;
+      const now = performance.now();
+      if (smoothBeat > 0.17 && bass > 0.16 && (now - lastFlash > 160)) {
+        flash = clamp(smoothBeat * 0.11, 0.015, 0.085);
+        lastFlash = now;
+      }
+
+      root.style.setProperty('--pulse', pulse.toFixed(4));
+      root.style.setProperty('--glow', glow.toFixed(4));
+      root.style.setProperty('--tracking', tracking.toFixed(4) + 'em');
+      root.style.setProperty('--bg-brightness', brightness.toFixed(4));
+      root.style.setProperty('--screen-flash', flash.toFixed(4));
+      root.style.setProperty('--blur', (90 + smoothBass * 45).toFixed(1) + 'px');
+      root.style.setProperty('--after-opacity', (0.12 + smoothEnergy * 0.12).toFixed(4));
+
+      rafId = requestAnimationFrame(animate);
+    }
+
+    async function startExperience() {
+      await initAudio();
+      window.removeEventListener('pointerdown', startExperience);
+      window.removeEventListener('keydown', startExperience);
+      window.removeEventListener('touchstart', startExperience);
+    }
+
+    window.addEventListener('pointerdown', startExperience, { passive: true });
+    window.addEventListener('touchstart', startExperience, { passive: true });
+    window.addEventListener('keydown', startExperience);
+
+    document.addEventListener('visibilitychange', async () => {
+      if (!audioContext) return;
+      if (!document.hidden && audioContext.state === 'suspended' && !audio.paused) {
+        try {
+          await audioContext.resume();
+        } catch (e) {
+          console.error(e);
+        }
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (!rafId && analyser) animate();
+    });
+
+    setupCursorBehavior();
+  </script>
+</body>
+</html>
