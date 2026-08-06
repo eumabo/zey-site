@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#050505" />
+    <meta
+      name="description"
+      content="ZEY — After Hours. Arquivo visual e experiência sonora."
+    />
+    <title>Ｚ ｅ ｙ</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="is-locked">
+    <div
+      class="enter-screen"
+      id="enterScreen"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Entrar no site"
+    >
+      <div class="enter-noise"></div>
+      <div class="enter-content">
+        <span class="enter-kicker">PRIVATE ARCHIVE · 2026</span>
+        <button class="enter-button" id="enterButton" type="button">
+          <span class="enter-word">ZEY</span>
+          <span class="enter-action">click here</span>
+        </button>
+        <span class="enter-note">A experiência contém áudio</span>
+      </div>
+    </div>
+
+    <div class="grain" aria-hidden="true"></div>
+    <div class="ambient ambient-left" aria-hidden="true"></div>
+    <div class="ambient ambient-right" aria-hidden="true"></div>
+    <div class="cursor-light" id="cursorLight" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Voltar ao início">ZEY</a>
+      <div class="topbar-center" aria-hidden="true">
+        <span></span>
+        Noface
+        <span></span>
+      </div>
+      <nav class="nav-actions" aria-label="Navegação principal">
+        <button
+          class="sound-btn"
+          id="soundBtn"
+          type="button"
+          aria-label="Reproduzir música"
+          aria-pressed="false"
+        >
+          <span class="sound-bars" aria-hidden="true"
+            ><i></i><i></i><i></i
+          ></span>
+        </button>
+        <a href="#gallery">Archive</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <article class="player-card reveal">
+          <div class="card-topline">
+            <span>NOW PLAYING</span>
+            <span class="live-status"><i></i> LIVE</span>
+          </div>
+
+          <div class="identity-row">
+            <div class="avatar-wrap">
+              <img src="assets/avatar.png" alt="Avatar ZEY" />
+              <span class="avatar-ring" aria-hidden="true"></span>
+            </div>
+            <div class="identity-copy">
+              <span class="eyebrow">PRIVATE FREQUENCY</span>
+              <h1>ZEY</h1>
+              <p>Online after midnight.</p>
+            </div>
+          </div>
+
+          <div class="track-block">
+            <div class="track-heading">
+              <div>
+                <span class="track-index">TRACK 01</span>
+                <h2 id="trackTitle">$</h2>
+              </div>
+              <span class="track-format">WAV</span>
+            </div>
+
+            <div class="progress-wrap">
+              <button
+                class="player-toggle"
+                id="playerToggle"
+                type="button"
+                aria-label="Reproduzir música"
+              >
+                <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5.2v13.6L19 12 8 5.2Z" />
+                </svg>
+                <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 5h4v14H7V5Zm6 0h4v14h-4V5Z" />
+                </svg>
+              </button>
+              <div class="timeline-area">
+                <input
+                  id="progress"
+                  class="progress"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="0"
+                  step="0.1"
+                  aria-label="Progresso da música"
+                />
+                <div class="time-row">
+                  <span id="currentTime">00:00</span>
+                  <span id="duration">00:00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer-row">
+            <button
+              class="discord-btn"
+              id="discordBtn"
+              type="button"
+              data-user="ghostenk"
+            >
+              <span>DISCORD</span>
+              <strong>@ghostenk</strong>
+            </button>
+            <div class="equalizer" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+        </article>
+
+        <div class="disc-stage reveal" aria-label="Disco cromado animado ZEY">
+          <div class="stage-coordinates" aria-hidden="true">
+            <span>20:26:00</span>
+            <span>NO SIGNAL / FULL SOUND</span>
+          </div>
+          <div class="disc-shadow" aria-hidden="true"></div>
+          <div class="disc-wrap" id="discWrap">
+            <div class="disc">
+              <div class="disc-grooves" aria-hidden="true"></div>
+              <div class="disc-reflection" aria-hidden="true"></div>
+              <div class="disc-label">
+                <span class="label-orbit orbit-top"
+                  >ZEY · AFTER HOURS · ZEY · AFTER HOURS ·</span
+                >
+                <img src="assets/logo.png" alt="Símbolo ZEY" />
+                <span class="label-small">01 / PRIVATE</span>
+              </div>
+            </div>
+          </div>
+          <div class="stage-caption">
+            <span>ROTATING MEMORY</span>
+            <i></i>
+            <span>PLAY TO ACTIVATE</span>
+          </div>
+        </div>
+
+        <a
+          class="scroll-indicator"
+          href="#gallery"
+          aria-label="Ir para o arquivo visual"
+        >
+          <span>SCROLL TO ARCHIVE</span>
+          <i></i>
+        </a>
+      </section>
+
+      <section class="gallery-section" id="gallery">
+        <div class="gallery-head reveal">
+          <div>
+            <span class="archive-kicker">VISUAL ARCHIVE / SELECTED FILES</span>
+            <h2>ARCHIVES</h2>
+          </div>
+          <div class="gallery-count">
+            <span>FILES</span>
+            <strong id="galleryCount">00</strong>
+          </div>
+        </div>
+
+        <div class="masonry">
+          <figure class="shot reveal" data-label="ARCHIVE 001">
+            <img src="assets/g24.jpg" alt="ZEY visual 01" loading="lazy" />
+          </figure>
+          <figure class="shot wide reveal" data-label="ARCHIVE 002">
+            <img src="assets/g3.jpg" alt="ZEY visual 02" loading="lazy" />
+          </figure>
+          <figure class="shot reveal" data-label="PRIVATE MEMORY">
+            <img src="assets/g6.jpg" alt="ZEY visual 03" loading="lazy" />
+          </figure>
+          <figure class="shot tall reveal" data-label="ARCHIVE 004">
+            <img src="assets/g2.png" alt="ZEY visual 04" loading="lazy" />
+          </figure>
+          <figure class="shot reveal" data-label="NO LOCATION">
+            <img src="assets/g7.jpg" alt="ZEY visual 05" loading="lazy" />
+          </figure>
+          <figure class="shot reveal" data-label="ARCHIVE 006">
+            <img src="assets/g10.jpg" alt="ZEY visual 06" loading="lazy" />
+          </figure>
+          <figure class="shot tall reveal" data-label="02:17 AM">
+            <img src="assets/g12.jpg" alt="ZEY visual 07" loading="lazy" />
+          </figure>
+          <figure class="shot reveal" data-label="ARCHIVE 008">
+            <img src="assets/g13.png" alt="ZEY visual 08" loading="lazy" />
+          </figure>
+          <figure class="shot tall reveal" data-label="PRIVATE MEMORY">
+            <img src="assets/g22.png" alt="ZEY visual 09" loading="lazy" />
+          </figure>
+          <!-- <figure class="shot reveal" data-label="ARCHIVE 010">
+            <img src="assets/g8.png" alt="ZEY visual 10" loading="lazy" /> -->
+          </figure>
+          <figure class="shot tall reveal" data-label="NO SIGNAL">
+            <img src="assets/g14.jpg" alt="ZEY visual 11" loading="lazy" />
+          </figure>
+          <figure class="shot tall reveal" data-label="ARCHIVE 012">
+            <img src="assets/g1.jpg" alt="ZEY visual 12" loading="lazy" />
+          </figure>
+          <figure class="shot tall reveal" data-label="AFTER MIDNIGHT">
+            <img src="assets/g25.jpg" alt="ZEY visual 13" loading="lazy" />
+          </figure>
+          <figure class="shot tall reveal" data-label="ARCHIVE 014">
+            <img src="assets/g27.png" alt="ZEY visual 14" loading="lazy" />
+          </figure>
+         
+          <!-- <figure class="shot tall reveal" data-label="PRIVATE MEMORY">
+            <img src="assets/g28.png" alt="ZEY visual 15" loading="lazy" />
+          </figure>
+          <figure class="shot tall reveal" data-label="ARCHIVE 016">
+            <img src="assets/g300000.png" alt="ZEY visual 16" loading="lazy" /> -->
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <div class="contador-global" aria-label="Contador de visualizações">
+      <span class="dot"></span>
+      <strong id="contador">0</strong>
+      <small>VIEWS</small>
+    </div>
+
+    <footer class="site-footer">
+      <div><span>DESIGNED IN THE DARK</span><strong>ZEY</strong></div>
+      <span>© 2026 — PRIVATE ARCHIVE</span>
+    </footer>
+
+    <audio id="bg-music" loop preload="metadata">
+      <source src="assets/music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        runTransaction,
+        onValue,
+      } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBOTYED5F2vFicKsOiVnAVLW8vW_dsv-U",
+        authDomain: "euzey-8da83.firebaseapp.com",
+        databaseURL: "https://euzey-8da83-default-rtdb.firebaseio.com",
+        projectId: "euzey-8da83",
+      };
+
+      try {
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const contadorRef = ref(db, "visitas");
+        const tempoLimite = 24 * 60 * 60 * 1000;
+        const ultimaVisita = Number(localStorage.getItem("ultimaVisita") || 0);
+        const agora = Date.now();
+
+        if (!ultimaVisita || agora - ultimaVisita > tempoLimite) {
+          runTransaction(contadorRef, (current) => (current || 4971) + 1);
+          localStorage.setItem("ultimaVisita", String(agora));
+        }
+
+        onValue(contadorRef, (snapshot) => {
+          const el = document.getElementById("contador");
+          if (!el) return;
+          el.textContent = Number(snapshot.val() || 0).toLocaleString("pt-BR");
+          el.classList.add("pulse");
+          window.setTimeout(() => el.classList.remove("pulse"), 300);
+        });
+      } catch (error) {
+        console.warn("Contador indisponível.", error);
+      }
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>
