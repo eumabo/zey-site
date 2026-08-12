@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>ZEY / Admin</title>
+    <link rel="icon" href="../assets/favicon.png" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="ambient"></div>
+
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="../" aria-label="Voltar para euzey.site">ZEY</a>
+        <div class="top-actions">
+          <span id="sessionEmail" class="session-email"></span>
+          <button id="logoutButton" class="text-button" type="button" hidden>SAIR</button>
+        </div>
+      </header>
+
+      <section id="loginView" class="login-view">
+        <div class="login-card">
+          <span class="eyebrow">PRIVATE ACCESS</span>
+          <h1>ADMIN</h1>
+          <p>Entre para organizar a ordem das fotos do arquivo.</p>
+
+          <form id="loginForm" autocomplete="on">
+            <label>
+              <span>E-MAIL</span>
+              <input id="emailInput" type="email" autocomplete="username" required />
+            </label>
+            <label>
+              <span>SENHA</span>
+              <input id="passwordInput" type="password" autocomplete="current-password" required />
+            </label>
+            <button id="loginButton" class="primary-button" type="submit">ENTRAR</button>
+          </form>
+
+          <p id="loginMessage" class="message" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section id="adminView" class="admin-view" hidden>
+        <div class="admin-head">
+          <div>
+            <span class="eyebrow">VISUAL ARCHIVE</span>
+            <h1>ORGANIZAR FOTOS</h1>
+            <p>Arraste as fotos. A nova ordem é salva automaticamente.</p>
+          </div>
+          <div class="save-state" id="saveState">CARREGANDO...</div>
+        </div>
+
+        <div id="photoGrid" class="photo-grid" aria-label="Fotos arrastáveis"></div>
+      </section>
+
+      <section id="setupView" class="setup-view" hidden>
+        <div class="login-card">
+          <span class="eyebrow">SETUP</span>
+          <h1>FALTA CONFIGURAR</h1>
+          <p>
+            Abra <strong>supabase-config.js</strong> e cole a Project URL e a anon key do seu projeto.
+            O arquivo <strong>SUPABASE_SETUP.sql</strong> já está pronto para criar o banco e as regras.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="admin.js"></script>
+  </body>
+</html>

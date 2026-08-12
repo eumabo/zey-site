@@ -1,0 +1,23 @@
+ZEY / ADMIN — SUPABASE JÁ CONFIGURADO
+====================================
+
+JÁ FOI FEITO
+- Projeto Supabase criado
+- Banco gallery_settings criado
+- Banco site_stats criado
+- RLS ativado
+- Somente mabobeatz@gmail.com pode alterar a ordem
+- Project URL configurada
+- Publishable Key configurada
+
+FALTA APENAS CRIAR SEU LOGIN
+No Supabase:
+Authentication > Users > Add user
+E-mail: mabobeatz@gmail.com
+Escolha sua senha (não compartilhe com ninguém).
+
+Depois publique este site e entre em:
+https://euzey.site/admin/
+
+As fotos continuam em /assets.
+O Supabase guarda apenas a ordem das fotos e o contador.
