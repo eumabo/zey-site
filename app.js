@@ -167,3 +167,54 @@ discordBtn?.addEventListener('click', async () => {
 window.addEventListener('beforeunload', () => {
   if (animationFrame) cancelAnimationFrame(animationFrame);
 });
+
+// ZEY — subtle hero parallax. Keeps the archive composition alive without feeling game-like.
+(() => {
+  const hero = document.querySelector('.archive-hero');
+  if (!hero || !window.matchMedia('(pointer:fine)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const layers = [...hero.querySelectorAll('[data-depth]')];
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+  let raf = 0;
+
+  const tick = () => {
+    currentX += (targetX - currentX) * 0.065;
+    currentY += (targetY - currentY) * 0.065;
+    layers.forEach(layer => {
+      const depth = Number(layer.dataset.depth || 0.1);
+      layer.style.setProperty('--parallax-x', `${(currentX * depth).toFixed(2)}px`);
+      layer.style.setProperty('--parallax-y', `${(currentY * depth).toFixed(2)}px`);
+    });
+    raf = requestAnimationFrame(tick);
+  };
+
+  hero.addEventListener('pointermove', event => {
+    const rect = hero.getBoundingClientRect();
+    const nx = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+    const ny = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+    targetX = nx * 17;
+    targetY = ny * 13;
+  });
+  hero.addEventListener('pointerleave', () => {
+    targetX = 0;
+    targetY = 0;
+  });
+  raf = requestAnimationFrame(tick);
+  window.addEventListener('beforeunload', () => cancelAnimationFrame(raf), { once:true });
+})();
+
+// Hide the floating view pill while the same information is presented in the hero.
+(() => {
+  const hero = document.querySelector('.archive-hero');
+  if (!hero) return;
+  const updateHeroState = () => {
+    const cutoff = Math.max(140, hero.offsetHeight * 0.62);
+    document.body.classList.toggle('hero-at-top', window.scrollY < cutoff);
+  };
+  updateHeroState();
+  window.addEventListener('scroll', updateHeroState, { passive:true });
+  window.addEventListener('resize', updateHeroState, { passive:true });
+})();

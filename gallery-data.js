@@ -6,12 +6,15 @@ import {
 } from './supabase-config.js';
 
 const galleryCount = document.getElementById('galleryCount');
+const heroFileCount = document.getElementById('heroFileCount');
 const counter = document.getElementById('contador');
+const heroViews = document.getElementById('heroViews');
 
 const updateGalleryCount = () => {
   if (!galleryCount) return;
   const total = document.querySelectorAll('.masonry .shot img').length;
   galleryCount.textContent = String(total).padStart(2, '0');
+  if (heroFileCount) heroFileCount.textContent = String(total).padStart(2, '0');
 };
 
 const getFigureKey = figure => figure.querySelector('img')?.getAttribute('src') || '';
@@ -101,7 +104,9 @@ const applyPhotoOrder = order => {
 
 const setCounter = value => {
   if (!counter) return;
-  counter.textContent = Number(value || 0).toLocaleString('pt-BR');
+  const formatted = Number(value || 0).toLocaleString('pt-BR');
+  counter.textContent = formatted;
+  if (heroViews) heroViews.textContent = formatted;
   counter.classList.add('pulse');
   window.setTimeout(() => counter.classList.remove('pulse'), 300);
 };
@@ -139,4 +144,4 @@ const init = async () => {
   }
 };
 
-init(); 
+init();

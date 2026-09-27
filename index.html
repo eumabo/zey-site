@@ -66,116 +66,70 @@
     </header>
 
     <main>
-      <section class="hero" id="home">
-        <article class="player-card reveal">
-          <div class="card-topline">
-            <span>NOW PLAYING</span>
-            <span class="live-status"><i></i> LIVE</span>
-          </div>
+      <section class="hero archive-hero" id="home" aria-label="ZEY private memory">
+        <div class="archive-hero-vignette" aria-hidden="true"></div>
+        <div class="archive-hero-scan" aria-hidden="true"></div>
 
-          <div class="identity-row">
-            <div class="avatar-wrap">
-              <img src="assets/avatar.png" alt="Avatar ZEY" />
-              <span class="avatar-ring" aria-hidden="true"></span>
-            </div>
-            <div class="identity-copy">
-              <span class="eyebrow">PRIVATE FREQUENCY</span>
-              <h1>ZEY</h1>
-              <p>Online after midnight.</p>
-            </div>
-          </div>
-
-          <div class="track-block">
-            <div class="track-heading">
-              <div>
-                <span class="track-index">TRACK 01</span>
-                <h2 id="trackTitle"></h2>
-              </div>
-              <span class="track-format">WAV</span>
-            </div>
-
-            <div class="progress-wrap">
-              <button
-                class="player-toggle"
-                id="playerToggle"
-                type="button"
-                aria-label="Reproduzir música"
-              >
-                <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M8 5.2v13.6L19 12 8 5.2Z" />
-                </svg>
-                <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 5h4v14H7V5Zm6 0h4v14h-4V5Z" />
-                </svg>
-              </button>
-              <div class="timeline-area">
-                <input
-                  id="progress"
-                  class="progress"
-                  type="range"
-                  min="0"
-                  max="100"
-                  value="0"
-                  step="0.1"
-                  aria-label="Progresso da música"
-                />
-                <div class="time-row">
-                  <span id="currentTime">00:00</span>
-                  <span id="duration">00:00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-footer-row">
-            <button
-              class="discord-btn"
-              id="discordBtn"
-              type="button"
-              data-user="ghostenk"
-            >
-              <span>DISCORD</span>
-              <strong>@ghostenk</strong>
-            </button>
-            <div class="equalizer" aria-hidden="true">
-              <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-            </div>
-          </div>
-        </article>
-
-        <div class="disc-stage reveal" aria-label="Disco cromado animado ZEY">
-          <div class="stage-coordinates" aria-hidden="true">
-            <span>20:26:00</span>
-            <span>NO SIGNAL / FULL SOUND</span>
-          </div>
-          <div class="disc-shadow" aria-hidden="true"></div>
-          <div class="disc-wrap" id="discWrap">
-            <div class="disc">
-              <div class="disc-grooves" aria-hidden="true"></div>
-              <div class="disc-reflection" aria-hidden="true"></div>
-              <div class="disc-label">
-                <span class="label-orbit orbit-top"
-                  >ZEY · AFTER HOURS · ZEY · AFTER HOURS ·</span
-                >
-                <img src="assets/logo.png" alt="Símbolo ZEY" />
-                <span class="label-small">01 / PRIVATE</span>
-              </div>
-            </div>
-          </div>
-          <div class="stage-caption">
-            <span>ROTATING MEMORY</span>
-            <i></i>
-            <span>PLAY TO ACTIVATE</span>
-          </div>
+        <div class="hero-side-list hero-side-list-left hero-animate" data-depth="0.18" aria-hidden="true">
+          <span>//</span>
+          <b>PHOTOS</b><b>VIDEOS</b><b>NOTES</b><b>PRIVATE</b>
         </div>
 
-        <a
-          class="scroll-indicator"
-          href="#gallery"
-          aria-label="Ir para o arquivo visual"
-        >
-          <span>SCROLL TO ARCHIVE</span>
+        <figure class="memory-frame memory-frame-left hero-animate" data-depth="0.34" aria-hidden="true">
+          <img src="assets/g1.jpg" alt="" />
+          <span class="frame-cross frame-cross-r"></span>
+          <small>001</small>
+        </figure>
+
+        <figure class="memory-frame memory-frame-texture hero-animate" data-depth="0.12" aria-hidden="true">
+          <img src="assets/g25.jpg" alt="" />
+          <figcaption>LESS YOU CARE,<br />MORE YOU LIVE.</figcaption>
           <i></i>
+        </figure>
+
+        <div class="hero-main-visual hero-animate" data-depth="0.55">
+          <div class="main-visual-guides" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <figure class="main-photo-wrap">
+            <img src="assets/g10.jpg" alt="Retrato escuro do arquivo visual ZEY" />
+            <div class="main-photo-sheen" aria-hidden="true"></div>
+          </figure>
+          <span class="main-file-index">001</span>
+          <span class="main-coordinates">23.5505° S · 46.6333° W</span>
+        </div>
+
+        <div class="hero-copy hero-animate" data-depth="0.08">
+          <h1><span>PRIVATE</span><span>MEMORY</span><sup>©</sup></h1>
+          <div class="hero-copy-meta">
+            <span>VISUAL ARCHIVE / 2026</span>
+            <span>SELECTED FILES / PERSONAL MEMORY</span>
+          </div>
+          <div class="hero-rule"></div>
+          <div class="hero-stats">
+            <div><strong id="heroFileCount">22</strong><span>FILES</span></div>
+            <div><strong id="heroViews">0</strong><span>VIEWS</span></div>
+            <i></i>
+            <div><strong>SERRA / BR</strong><span><em></em> ONLINE</span></div>
+          </div>
+          <a class="archive-enter" href="#gallery"><span>ENTER ARCHIVE</span><b>→</b></a>
+        </div>
+
+        <figure class="memory-frame memory-frame-right-top hero-animate" data-depth="0.30" aria-hidden="true">
+          <img src="assets/g330000.png" alt="" />
+        </figure>
+
+        <div class="hero-side-list hero-side-list-right hero-animate" data-depth="0.16" aria-hidden="true">
+          <span>//</span>
+          <b>PLACES</b><b>PEOPLE</b><b>THOUGHTS</b><b>MOMENTS</b>
+        </div>
+
+        <figure class="memory-frame memory-frame-right-bottom hero-animate" data-depth="0.26" aria-hidden="true">
+          <img src="assets/g6.jpg" alt="" />
+          <small>022</small>
+        </figure>
+
+        <div class="hero-range hero-animate" aria-hidden="true">[ 001 — 022 ]</div>
+        <a class="scroll-indicator archive-scroll-indicator hero-animate" href="#gallery" aria-label="Ir para o arquivo visual">
+          <span>SCROLL TO ARCHIVE</span><i></i>
         </a>
       </section>
 
