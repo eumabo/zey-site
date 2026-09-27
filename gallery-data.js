@@ -131,25 +131,9 @@ const init = async () => {
   }
 
   try {
-    const visitKey = 'zeyUltimaVisita';
-    const limit = 24 * 60 * 60 * 1000;
-    const lastVisit = Number(localStorage.getItem(visitKey) || 0);
-    const now = Date.now();
-
-    if (!lastVisit || now - lastVisit > limit) {
-      const { data, error } = await supabase.rpc('increment_site_views');
-      if (error) throw error;
-      setCounter(data);
-      localStorage.setItem(visitKey, String(now));
-    } else {
-      const { data, error } = await supabase
-        .from('site_stats')
-        .select('views')
-        .eq('id', 'main')
-        .maybeSingle();
-      if (error) throw error;
-      setCounter(data?.views);
-    }
+    const { data, error } = await supabase.rpc('increment_site_views');
+    if (error) throw error;
+    setCounter(data);
   } catch (error) {
     console.warn('Contador indisponível.', error);
   }
