@@ -1,0 +1,47 @@
+ZEY — EDITORIAL FULLSCREEN (versão corrigida)
+==========================================
+
+CORREÇÕES
+- Site ocupa a janela inteira do navegador, sem as margens pretas externas.
+- Som ambiente independente do vídeo: depois de clicar no ícone de som,
+  pode continuar em outras abas. O site NÃO pausa o áudio ao perder foco.
+- Não é possível garantir áudio em segundo plano quando o próprio navegador,
+  modo economia de bateria ou sistema operacional suspende a aba.
+- O vídeo permanece em loop, com duração livre (inclusive 5 min), e a imagem
+  de prévia é exibida quando não existe assets/background.mp4.
+
+COMO TESTAR
+1) Extraia TODOS os arquivos do ZIP em uma mesma pasta.
+2) Abra index.html no navegador.
+3) Clique uma vez no ícone de áudio, na parte inferior esquerda.
+4) Troque de aba: o áudio deve continuar, se o navegador não suspender o site.
+5) O layout agora ocupa todo o conteúdo da janela automaticamente.
+
+COMO ADICIONAR O VÍDEO
+- Copie um arquivo MP4 para assets/background.mp4.
+- Sem outras mudanças, ele substituirá a imagem de prévia em loop.
+- O MP4 começa mudo, mas a música ambiente deste projeto toca ao ativar o som.
+- Para usar o áudio DO VÍDEO, no site-config.js altere audioMode para 'video'.
+- Para usar link externo de arquivo MP4, mude videoUrl para URL direta HTTPS.
+
+ATENÇÃO SOBRE ENQUADRAMENTO
+- Para preencher a tela inteira, o vídeo usa object-fit: cover.
+- Isso pode cortar um pouco as laterais ou topo do vídeo em monitores/celulares.
+- Para não cortar, mude videoFit para 'contain' no site-config.js,
+  mas isso trará faixas pretas em telas de outra proporção.
+
+PUBLICAR NO GITHUB
+- Faça backup do site anterior e envie os arquivos EXTRAÍDOS.
+- Para um vídeo grande, hospede o MP4 em storage/CDN com suporte Range e
+  aponte videoUrl no site-config.js ao link direto.
+- Se a Vercel estiver conectada, o push em geral inicia um novo deploy.
+- Faça hard refresh (Ctrl+Shift+R) após publicar.
+
+
+AUTOPLAY DE ÁUDIO
+-----------------
+O site tenta reproduzir música imediatamente ao abrir.
+Por proteção do visitante, Chrome, Opera, Safari e outros navegadores
+podem bloquear som automático. Neste caso, clique em qualquer ponto
+do cenário ou no ícone de som para iniciar. A reprodução em outra aba
+também depende da política de economia de energia do navegador.
