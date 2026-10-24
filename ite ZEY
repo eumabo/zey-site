@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#050505" />
+    <meta
+      name="description"
+      content="ZEY — After Hours. Arquivo visual e experiência sonora."
+    />
+    <title>Ｚ ｅ ｙ</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="is-locked">
+    <div
+      class="enter-screen"
+      id="enterScreen"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Entrar no site"
+    >
+      <div class="enter-noise"></div>
+      <div class="enter-content">
+        <span class="enter-kicker">PRIVATE ARCHIVE · 2026</span>
+        <button class="enter-button" id="enterButton" type="button">
+          <span class="enter-word">ZEY</span>
+          <span class="enter-action">click here</span>
+        </button>
+        <span class="enter-note"></span>
+      </div>
+    </div>
+
+    <div class="grain" aria-hidden="true"></div>
+    <div class="ambient ambient-left" aria-hidden="true"></div>
+    <div class="ambient ambient-right" aria-hidden="true"></div>
+    <div class="cursor-light" id="cursorLight" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Voltar ao início">ZEY</a>
+      <div class="topbar-center" aria-hidden="true">
+        <span></span>
+        Noface
+        <span></span>
+      </div>
+      <nav class="nav-actions" aria-label="Navegação principal">
+        <button
+          class="sound-btn"
+          id="soundBtn"
+          type="button"
+          aria-label="Reproduzir música"
+          aria-pressed="false"
+        >
+          <span class="sound-bars" aria-hidden="true"
+            ><i></i><i></i><i></i
+          ></span>
+        </button>
+        <a href="#gallery">Archive</a>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        class="hero archive-hero"
+        id="home"
+        aria-label="ZEY private memory"
+      >
+        <div class="archive-hero-vignette" aria-hidden="true"></div>
+        <div class="archive-hero-scan" aria-hidden="true"></div>
+
+        <div
+          class="hero-side-list hero-side-list-left hero-animate"
+          data-depth="0.18"
+          aria-hidden="true"
+        >
+          <span>//</span>
+          <b>PHOTOS</b><b>VIDEOS</b><b>NOTES</b><b>PRIVATE</b>
+        </div>
+
+        <figure
+          class="memory-frame memory-frame-left hero-animate"
+          data-depth="0.34"
+          aria-hidden="true"
+        >
+          <img src="assets/g1.jpg" alt="" />
+          <span class="frame-cross frame-cross-r"></span>
+          <small>001</small>
+        </figure>
+
+        <figure
+          class="memory-frame memory-frame-texture hero-animate"
+          data-depth="0.12"
+          aria-hidden="true"
+        >
+          <img src="assets/g25.jpg" alt="" />
+          <figcaption>LESS YOU CARE,<br />MORE YOU LIVE.</figcaption>
+          <i></i>
+        </figure>
+
+        <div class="hero-main-visual hero-animate" data-depth="0.55">
+          <div class="main-visual-guides" aria-hidden="true">
+            <i></i><i></i><i></i><i></i>
+          </div>
+          <figure class="main-photo-wrap">
+            <img
+              src="assets/avatar.png"
+              alt="Retrato escuro do arquivo visual ZEY"
+            />
+            <div class="main-photo-sheen" aria-hidden="true"></div>
+          </figure>
+          <span class="main-file-index">001</span>
+        </div>
+
+        <div class="hero-copy hero-animate" data-depth="0.08">
+          <h1><span>PRIVATE</span><span>MEMORY</span><sup>©</sup></h1>
+          <div class="hero-copy-meta">
+            <span>VISUAL ARCHIVE / 2026</span>
+            <span>SELECTED FILES / PERSONAL MEMORY</span>
+          </div>
+          <div class="hero-rule"></div>
+          <div class="hero-stats">
+            <div><strong id="heroFileCount">22</strong><span>FILES</span></div>
+            <div><strong id="heroViews">0</strong><span>VIEWS</span></div>
+          </div>
+          <a class="archive-enter" href="#gallery"
+            ><span>ENTER ARCHIVE</span><b>→</b></a
+          >
+        </div>
+
+        <figure
+          class="memory-frame memory-frame-right-top hero-animate"
+          data-depth="0.30"
+          aria-hidden="true"
+        >
+          <img src="assets/g330000.png" alt="" />
+        </figure>
+
+        <div
+          class="hero-side-list hero-side-list-right hero-animate"
+          data-depth="0.16"
+          aria-hidden="true"
+        >
+          <span>//</span>
+          <b>PLACES</b><b>PEOPLE</b><b>THOUGHTS</b><b>MOMENTS</b>
+        </div>
+
+        <figure
+          class="memory-frame memory-frame-right-bottom hero-animate"
+          data-depth="0.26"
+          aria-hidden="true"
+        >
+          <img src="assets/g6.jpg" alt="" />
+          <small>022</small>
+        </figure>
+
+        <div class="hero-range hero-animate" aria-hidden="true">
+          [ 001 — 022 ]
+        </div>
+        <a
+          class="scroll-indicator archive-scroll-indicator hero-animate"
+          href="#gallery"
+          aria-label="Ir para o arquivo visual"
+        >
+          <span>SCROLL TO ARCHIVE</span><i></i>
+        </a>
+      </section>
+
+      <section class="gallery-section" id="gallery">
+        <div class="gallery-head reveal">
+          <div>
+            <span class="archive-kicker">VISUAL ARCHIVE / SELECTED FILES</span>
+            <h2>ARCHIVES</h2>
+          </div>
+          <div class="gallery-count">
+            <span>FILES</span>
+            <strong id="galleryCount">00</strong>
+          </div>
+        </div>
+
+        <div class="masonry">
+          <figure class="shot reveal" data-label="ARCHIVE 001">
+            <img src="assets/g24.jpg" alt="ZEY visual 01" loading="lazy" />
+          </figure>
+          <figure class="shot wide reveal" data-label="ARCHIVE 002">
+            <img src="assets/g3.jpg" alt="ZEY visual 02" loading="lazy" />
+          </figure>
+          <figure class="shot reveal" data-label="PRIVATE MEMORY">
+            <img src="assets/g6.jpg" alt="ZEY visual 03" loading="lazy" />
+          </figure>
+          <figure class="shot tall reveal" data-label="ARCHIVE 004">
+            <img src="assets/g2.png" alt="ZEY visual 04" loading="lazy" />
+          </figure>
+          <figure class="shot reveal" data-label="NO LOCATION">
+            <img src="assets/g7.jpg" alt="ZEY visual 05" loading="lazy" />
+          </figure>
+          <figure class="shot reveal" data-label="ARCHIVE 006">
+            <img src="assets/g10.png" alt="ZEY visual 06" loading="lazy" />
+          </figure>
+          <figure class="shot tall reveal" data-label="02:17 AM">
+            <img src="assets/g12.jpg" alt="ZEY visual 07" loading="lazy" />
+          </figure>
+          <figure class="shot reveal" data-label="ARCHIVE 008">
+            <img src="assets/g13.png" alt="ZEY visual 08" loading="lazy" />
+          </figure>
+
+          <figure class="shot tall reveal" data-label="ARCHIVE 016">
+            <img src="assets/g330000.png" alt="ZEY visual 33" loading="lazy" />
+          </figure>
+
+          <figure class="shot tall reveal" data-label="ARCHIVE 016">
+            <img src="assets/g63.png" alt="ZEY visual 33" loading="lazy" />
+          </figure>
+
+          <figure class="shot tall reveal" data-label="ARCHIVE 016">
+            <img src="assets/g64.png" alt="ZEY visual 33" loading="lazy" />
+          </figure>
+
+          <figure class="shot tall reveal" data-label="PRIVATE MEMORY">
+            <img src="assets/g44.png" alt="ZEY visual 44" loading="lazy" />
+          </figure>
+          
+          <figure class="shot tall reveal" data-label="PRIVATE MEMORY">
+            <img src="assets/g98.png" alt="ZEY visual 98" loading="lazy" />
+          </figure>
+          <figure class="shot tall reveal" data-label="PRIVATE MEMORY">
+            <img src="assets/g45.png" alt="ZEY visual 45" loading="lazy" />
+          </figure>
+
+          <figure class="shot tall reveal" data-label="PRIVATE MEMORY">
+            <img src="assets/g22.png" alt="ZEY visual 09" loading="lazy" />
+          </figure>
+
+          <figure class="shot tall reveal" data-label="PRIVATE MEMORY">
+            <img src="assets/g999.jpg" alt="ZEY visual 999" loading="lazy" />
+          </figure>
+
+          <figure class="shot tall reveal" data-label="PRIVATE MEMORY">
+            <img src="assets/g336.jpeg" alt="ZEY visual 336" loading="lazy" />
+          </figure>
+
+          <figure class="shot tall reveal" data-label="NO SIGNAL">
+            <img src="assets/g88 (2).jpeg" alt="ZEY visual 11" loading="lazy" />
+          </figure>   
+
+            <!-- <figure class="shot tall reveal" data-label="NO SIGNAL">
+            <img src="assets/g88 (3).jpeg" alt="ZEY visual 11" loading="lazy" />
+          </figure>   
+
+          <!-- <figure class="shot tall reveal" data-label="NO SIGNAL">
+            <img src="assets/g88 (1).jpeg" alt="ZEY visual 11" loading="lazy" />
+          </figure>   -->
+          
+          <figure class="shot tall reveal" data-label="NO SIGNAL">
+            <img src="assets/g14.jpg" alt="ZEY visual 11" loading="lazy" />
+          </figure> 
+          <figure class="shot tall reveal" data-label="ARCHIVE 012">
+            <img src="assets/g1.jpg" alt="ZEY visual 12" loading="lazy" />
+          </figure>
+          <figure class="shot tall reveal" data-label="AFTER MIDNIGHT">
+            <img src="assets/g25.jpg" alt="ZEY visual 13" loading="lazy" />
+          </figure>
+
+          <figure class="shot tall reveal" data-label="PRIVATE MEMORY">
+            <img src="assets/g34.jpeg" alt="ZEY visual 34" loading="lazy" />
+          </figure>
+
+          <figure class="shot tall reveal" data-label="ARCHIVE 014">
+            <img src="assets/g27.png" alt="ZEY visual 14" loading="lazy" />
+          </figure>
+
+          <!-- <figure class="shot reveal" data-label="ARCHIVE 010">
+            <img src="assets/g8.png" alt="ZEY visual 10" loading="lazy" 
+          </figure>  /> -->
+          <!-- <figure class="shot reveal" data-label="ARCHIVE 015">
+            <img src="assets/g15.jpg" alt="ZEY visual 15" loading="lazy" /> 
+           </figure> -->
+          <!--  <figure class="shot reveal" data-label="ARCHIVE 015">
+            <img src="assets/g15.png" alt="ZEY visual 15" loading="lazy" /> 
+            </figure>
+          
+           <figure class="shot tall reveal" data-label="PRIVATE MEMORY">
+            <img src="assets/g54.png" alt="ZEY visual 54" loading="lazy" />
+          </figure>    -->
+        </div>
+      </section>
+    </main>
+
+    <div class="contador-global" aria-label="Contador de visualizações">
+      <span class="dot"></span>
+      <strong id="contador">0</strong>
+      <small>VIEWS</small>
+    </div>
+
+    <footer class="site-footer">
+      <div><span>DESIGNED IN THE DARK</span><strong>ZEY</strong></div>
+      <span>© 2026 — PRIVATE ARCHIVE</span>
+    </footer>
+
+    <audio id="bg-music" loop preload="metadata">
+      <source src="assets/music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script type="module" src="gallery-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
